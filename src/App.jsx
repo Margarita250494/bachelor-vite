@@ -2,10 +2,10 @@ import {lazy, Suspense} from "react";
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 
 // Lazy load pages
-const Home = lazy(() => import("./Pages/Home"));
-const Legal = lazy(() => import("./Pages/Legal"));
-const Appointment = lazy(() => import("./Pages/Appointment"));
-const NotFound = lazy(() => import("./Pages/NotFound"));
+const Home = lazy(() => import("./pages/Home"));
+const Legal = lazy(() => import("./pages/Legal"));
+const Appointment = lazy(() => import("./pages/Appointment"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 function App() {
   return (
