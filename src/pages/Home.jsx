@@ -1,11 +1,11 @@
-import Header from "../Components/layout/header/Header";
-import Hero from "../Components/Hero";
-import Info from "../Components/Info";
-import About from "../Components/About";
-import BookAppointment from "../Components/BookAppointment";
-import Reviews from "../Components/Reviews";
-import Doctors from "../Components/Doctors.jsx";
-import Footer from "../Components/layout/footer/Footer";
+import Header from "../components/layout/header/Header";
+import Hero from "../components/Hero";
+import Info from "../components/Info";
+import About from "../components/About";
+import BookAppointment from "../components/BookAppointment";
+import Reviews from "../components/Reviews";
+import Doctors from "../components/Doctors.jsx";
+import Footer from "../components/layout/footer/Footer";
 
 function Home() {
   return (

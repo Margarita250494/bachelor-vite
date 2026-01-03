@@ -1,4 +1,4 @@
-import AppointmentForm from "../Components/AppointmentForm";
+import AppointmentForm from "../components/AppointmentForm";
 
 function Appointment() {
   return <AppointmentForm />;
