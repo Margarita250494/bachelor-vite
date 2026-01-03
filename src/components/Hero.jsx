@@ -1,4 +1,4 @@
-import Doctor from "../Assets/doctor-picture.webp";
+import Doctor from "../assets/doctor-picture.webp";
 import {useNavigate} from "react-router-dom";
 import {CalendarCheck} from '../utils/icons'
 import {infoHero} from '../utils/data/hero.data'

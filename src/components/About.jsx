@@ -1,5 +1,5 @@
 import React from "react";
-import Doctor from "../Assets/doctor-group.webp";
+import Doctor from "../assets/doctor-group.webp";
 import SolutionStep from "./SolutionStep";
 import {aboutInfo} from '../utils/data/about.data'
 import SectionDefault from './layout/SectionDefault'

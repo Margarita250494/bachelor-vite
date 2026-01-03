@@ -1,5 +1,5 @@
 import React from "react";
-import Doctor from "../Assets/doctor-book-appointment.webp";
+import Doctor from "../assets/doctor-book-appointment.webp";
 import {useNavigate} from "react-router-dom";
 import {infoBookAppointment} from '../utils/data/bookApointment.data'
 import {CalendarCheck, CircleCheck} from '../utils/icons'
