@@ -1,5 +1,4 @@
 import {useState} from "react";
-import {toast} from "react-toastify";
 import {HeaderList} from './HeaderList'
 import {CommentDots} from '../../../utils/icons'
 import {clsx} from 'clsx'
@@ -15,14 +14,16 @@ function Header() {
     setNav(!nav);
   };
 
-  const handleChatBtnClick = () => {
-    if (!isButtonDisabled) {
-      toast.info("Experiencing high traffic, Please wait a moment.", {
-        position: "top-center",
-        onOpen: () => setIsButtonDisabled(true),
-        onClose: () => setIsButtonDisabled(false),
-      });
-    }
+  const handleChatBtnClick = async () => {
+    if (isButtonDisabled) return;
+
+    const { toast } = await import("react-toastify");
+
+    toast.info("Experiencing high traffic, Please wait a moment.", {
+      position: "top-center",
+      onOpen: () => setIsButtonDisabled(true),
+      onClose: () => setIsButtonDisabled(false),
+    });
   };
 
   return (

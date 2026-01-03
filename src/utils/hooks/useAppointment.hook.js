@@ -1,6 +1,4 @@
 import {useCallback, useState} from "react";
-import {toast} from "react-toastify";
-
 const useAppointmentForm = () => {
   const [formData, setFormData] = useState({
     patientName: "",
@@ -81,7 +79,7 @@ const useAppointmentForm = () => {
     setFormErrors({});
   }, []);
 
-  const handleSubmit = useCallback((e) => {
+  const handleSubmit = useCallback(async(e) => {
     e.preventDefault();
 
     const errors = validateForm();
@@ -92,9 +90,9 @@ const useAppointmentForm = () => {
     }
 
     resetForm();
-
+    const { toast } = await import("react-toastify");
     toast.success("Appointment Scheduled!", {
-      position: toast.POSITION.TOP_CENTER,
+      position: "top-center",
       onOpen: () => setIsSubmitted(true),
       onClose: () => setIsSubmitted(false)
     });

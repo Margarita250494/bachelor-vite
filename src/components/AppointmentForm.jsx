@@ -1,5 +1,4 @@
-import {useEffect} from "react";
-import {ToastContainer} from "react-toastify";
+import { lazy, Suspense, useEffect } from "react";
 import AllRights from './AllRights'
 import MainButton from './buttons/MainButton'
 import BrandTitle from './BrandTitle'
@@ -10,6 +9,11 @@ import {genderData, modeData} from '../utils/data/form.data'
 import SuccessMessage from './form/SuccessMessage'
 import useAppointmentForm from '../utils/hooks/useAppointment.hook'
 
+const ToastContainer = lazy(() =>
+  import("react-toastify").then((m) => ({
+    default: m.ToastContainer
+  }))
+);
 function AppointmentForm() {
   useEffect(() => {
     window.scrollTo({top: 0, behavior: "smooth"});
@@ -103,11 +107,13 @@ function AppointmentForm() {
 
       <AllRights hasStyle />
 
-      <ToastContainer
-        autoClose={5000}
-        limit={1}
-        closeButton={false}
-      />
+      <Suspense fallback={null}>
+        <ToastContainer
+          autoClose={5000}
+          limit={1}
+          closeButton={false}
+        />
+      </Suspense>
     </>
   );
 }

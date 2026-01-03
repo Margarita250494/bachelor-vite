@@ -1,5 +1,5 @@
 import {useCallback, useState} from "react";
-import {toast} from "react-toastify";
+
 
 const EMAIL_REGEX = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 
@@ -15,19 +15,19 @@ const useNewsletter = () => {
     return EMAIL_REGEX.test(email);
   }, []);
 
-  const subscribe = useCallback(() => {
+  const subscribe = useCallback(async() => {
     if (isSubmitting) return;
-
+    const { toast } = await import("react-toastify");
     if (!email.trim()) {
       toast.error("Please enter an email address!", {
-        position: toast.POSITION.TOP_CENTER
+        position: "top-center",
       });
       return;
     }
 
     if (validateEmail(email)) {
       toast.success("Subscribed to Newsletter!", {
-        position: toast.POSITION.TOP_CENTER,
+        position: "top-center",
         onOpen: () => {
           setIsSubmitting(true);
           setEmail("");
@@ -36,7 +36,7 @@ const useNewsletter = () => {
       });
     } else {
       toast.error("Invalid Email Address!", {
-        position: toast.POSITION.TOP_CENTER,
+        position: "top-center",
         onOpen: () => setIsSubmitting(true),
         onClose: () => setIsSubmitting(false)
       });
