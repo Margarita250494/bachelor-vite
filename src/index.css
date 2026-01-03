@@ -1,68 +1,136 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", "sans-serif";
+  --font-serif: "Rubik", "sans-serif";
+  --font-cambria: "Cambria", "sans-serif";
+  --font-arial: "Arial", "sans-serif";
+
+  --breakpoint-xs: 600px;
+  --breakpoint-s: 700px;
+  --breakpoint-m: 900px;
+  --breakpoint-l: 1000px;
+
+  --color-white:#FFFFFF;
+  --color-black:#000000;
+
+  --color-primary-500:#1a8efd;
+  --color-primary-600:#1e8ffd;
+  --color-primary-700:#178bff;
+  --color-primary-800:#2c96ff;
+
+  --color-accent-green:#54de54;
+  --color-accent-teal:#1ecab0;
+  --color-accent-yellow:#f7bb50;
+  --color-accent-pink:#9d2553;
+  --color-accent-red:#FF1616;
+
+  --color-gray-900:#1b2433;
+  --color-gray-800:#293241;
+  --color-gray-700:#494949;
+  --color-gray-600:#4d4b4b;
+  --color-gray-500:#5a5a5a;
+  --color-gray-400:#6f7074;
+  --color-gray-300:#a5a7ac;
+  --color-gray-200:#cbcdd3;
+  --color-gray-150:#d0d3da;
+  --color-gray-100:#d7d3d3;
+
+  --color-blueSoft-50:#c9def4;
+  --color-blueSoft-100:#dce6ff;
+  --color-blueSoft-200:#dde5f8;
+  --color-blueSoft-300:#0cc2ea;
+
+  --background-image-gradient: linear-gradient(to right, #ECF2FF, #FBFCFF);
+
+
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("assets/Fonts/Poppins-Regular.woff2") format("woff2");
   font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@font-face {
+  font-family: "Poppins";
+  src: url("assets/Fonts/Poppins-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
 
+@font-face {
+  font-family: "Poppins";
+  src: url("assets/Fonts/Poppins-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("assets/Fonts/Poppins-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url("assets/Fonts/Rubik-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url("assets/Fonts/Rubik-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url("assets/Fonts/Rubik-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rubik";
+  src: url("assets/Fonts/Rubik-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+* {
+  box-sizing: border-box;
   font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+html {
+  scroll-behavior: smooth;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+
+/* Custom Scroll Bar */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+::-webkit-scrollbar-track {
+  background-color: #FFFFFF;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+::-webkit-scrollbar-thumb {
+  background-color: #1A8EFD;
+  border-radius: 4rem;
 }
