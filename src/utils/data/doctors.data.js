@@ -1,4 +1,4 @@
-import profile1 from '../../assets/profile-1.webp'
+import profile1 from '../../assets/doctor-picture.webp'
 import profile2 from '../../assets/profile-2.webp'
 import profile3 from '../../assets/profile-3.webp'
 import profile4 from '../../assets/profile-4.webp'
