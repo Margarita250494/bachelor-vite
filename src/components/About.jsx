@@ -18,6 +18,8 @@ function About() {
         image={Doctor}
         imageAlt="Doctor Group"
         isBig
+        width={475}
+        height={431}
       />
 
 

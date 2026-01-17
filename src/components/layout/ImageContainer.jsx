@@ -1,9 +1,11 @@
 import {clsx} from 'clsx'
 
-function ImageContainer({image, imageAlt, isBig}) {
+function ImageContainer({image, imageAlt, isBig,width, height}) {
   return (
     <div className="mb-8 l:mb-0 w-full l:w-[50%] max-w-full flex justify-center">
       <img
+        width={width}
+        height={height}
         src={image}
         alt={imageAlt}
         className={clsx(

@@ -25,6 +25,8 @@ function BookAppointment() {
       isMobileBlock
     >
       <ImageContainer
+        width={471}
+        height={526}
         image={Doctor}
         imageAlt="Doctor Group"
         isBig={false}
