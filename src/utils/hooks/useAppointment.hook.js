@@ -1,4 +1,6 @@
-import {useCallback, useState} from "react";
+'use client'
+import { useState } from "react";
+
 const useAppointmentForm = () => {
   const [formData, setFormData] = useState({
     patientName: "",
@@ -11,29 +13,17 @@ const useAppointmentForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [formErrors, setFormErrors] = useState({});
 
-  const handleChange = useCallback((field) => (e) => {
-    setFormData(prev => ({
-      ...prev,
-      [field]: e.target.value
-    }));
-    // Clear error for this field when user starts typing
-    if (formErrors[field]) {
-      setFormErrors(prev => ({
-        ...prev,
-        [field]: undefined
-      }));
-    }
-  }, [formErrors]);
+  const handleChange = (field) => (e) => {
+    setFormData(prev => ({ ...prev, [field]: e.target.value }));
 
-  const validateForm = useCallback(() => {
+    if (formErrors[field]) {
+      setFormErrors(prev => ({ ...prev, [field]: undefined }));
+    }
+  };
+
+  const validateForm = () => {
     const errors = {};
-    const {
-      patientName,
-      patientNumber,
-      patientGender,
-      appointmentTime,
-      preferredMode
-    } = formData;
+    const { patientName, patientNumber, patientGender, appointmentTime, preferredMode } = formData;
 
     if (!patientName.trim()) {
       errors.patientName = "Patient name is required";
@@ -55,7 +45,7 @@ const useAppointmentForm = () => {
       errors.appointmentTime = "Appointment time is required";
     } else {
       const selectedTime = new Date(appointmentTime).getTime();
-      const currentTime = new Date().getTime();
+      const currentTime = Date.now();
       if (selectedTime <= currentTime) {
         errors.appointmentTime = "Please select a future appointment time";
       }
@@ -66,9 +56,9 @@ const useAppointmentForm = () => {
     }
 
     return errors;
-  }, [formData]);
+  };
 
-  const resetForm = useCallback(() => {
+  const resetForm = () => {
     setFormData({
       patientName: "",
       patientNumber: "",
@@ -77,11 +67,10 @@ const useAppointmentForm = () => {
       preferredMode: "default"
     });
     setFormErrors({});
-  }, []);
+  };
 
-  const handleSubmit = useCallback(async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
     const errors = validateForm();
 
     if (Object.keys(errors).length > 0) {
@@ -96,7 +85,7 @@ const useAppointmentForm = () => {
       onOpen: () => setIsSubmitted(true),
       onClose: () => setIsSubmitted(false)
     });
-  }, [validateForm, resetForm]);
+  };
 
   return {
     formData,

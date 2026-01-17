@@ -1,7 +1,7 @@
-import React, {memo} from 'react';
+
 import ErrorMessage from './ErrorMessage'
 
-const Input = memo(({id, type, label, handleChange, value, error}) => {
+const Input =({id, type, label, handleChange, value, error}) => {
   return (
     <label
       htmlFor={id}
@@ -25,6 +25,6 @@ const Input = memo(({id, type, label, handleChange, value, error}) => {
     </label>
 
   );
-})
+}
 
 export default Input;
