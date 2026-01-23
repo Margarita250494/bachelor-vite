@@ -34,6 +34,6 @@ Diese Version dient zur Untersuchung, inwiefern der **React Compiler**:
 ![Digital Beacon Ergebnis2](/db2.png)
 ### Chrome Dev Tools
 ![Chrome Dev Tools HTML](/devhtml.png)
-![Chrome Dev Tools Styles](/devhstyles.png)
+![Chrome Dev Tools Styles](/devstyles.png)
 ![Chrome Dev Tools Images](/devimages.png)
-![Chrome Dev Tools HScripts](/devscripts.png)
+![Chrome Dev Tools Scripts](/devscripts.png)
